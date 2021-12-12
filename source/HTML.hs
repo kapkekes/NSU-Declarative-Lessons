@@ -3,7 +3,6 @@ module           HTML
     , countOpeningAngleBracketsInFile
     , taskOneWorker
     , taskTwoWorker
-    ,
     ) where
 
 import qualified System.Directory   as SD
@@ -69,7 +68,7 @@ taskTwoWorker = do
     if correctness
     then do
         inputHandler  <- openFile (DT.unpack path)      ReadMode
-        outputHandler <- openFile "output//second.html" WriteMode
+        outputHandler <- openFile "second.html" WriteMode
         let
             lineSkip skipNext = do
                 inputEnded <- hIsEOF inputHandler
