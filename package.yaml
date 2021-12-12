@@ -1,7 +1,7 @@
 name:                Lessons
 version:             0.1.0.0
 # github:              kapkekes
-license:             WTFPL
+license:             BSD3
 author:              Dmitriy Vashurin
 maintainer:          kapkekes@yandex.ru
 copyright:           2021 Dmitriy Vashurin
