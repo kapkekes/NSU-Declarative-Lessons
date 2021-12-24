@@ -53,6 +53,7 @@ getHandler = do
 
 wait :: IO ()
 wait = do
-    putStrLn "Program execution finished. Press Enter to exit..."
+    putStr "Program execution finished. Press Enter to exit..."
+    hFlush stdout
     char <- getChar
     putStr ""

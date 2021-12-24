@@ -30,6 +30,7 @@ library
       base >=4.7 && <5
     , bytestring
     , directory >=1.3.6.0
+    , iconv
     , pcre-heavy >=1.0.0.2
     , text >=1.2.4.1
   default-language: Haskell2010
@@ -37,6 +38,7 @@ library
 executable First
   main-is: First.hs
   other-modules:
+      Fifth
       Fourth
       Second
       Third
@@ -49,6 +51,28 @@ executable First
     , base >=4.7 && <5
     , bytestring
     , directory >=1.3.6.0
+    , iconv
+    , pcre-heavy >=1.0.0.2
+    , text >=1.2.4.1
+  default-language: Haskell2010
+
+executable Fourth
+  main-is: Fourth.hs
+  other-modules:
+      Fifth
+      First
+      Second
+      Third
+      Paths_Lessons
+  hs-source-dirs:
+      application
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is Fourth
+  build-depends:
+      Lessons
+    , base >=4.7 && <5
+    , bytestring
+    , directory >=1.3.6.0
+    , iconv
     , pcre-heavy >=1.0.0.2
     , text >=1.2.4.1
   default-language: Haskell2010
@@ -56,6 +80,7 @@ executable First
 executable Second
   main-is: Second.hs
   other-modules:
+      Fifth
       First
       Fourth
       Third
@@ -68,6 +93,7 @@ executable Second
     , base >=4.7 && <5
     , bytestring
     , directory >=1.3.6.0
+    , iconv
     , pcre-heavy >=1.0.0.2
     , text >=1.2.4.1
   default-language: Haskell2010
@@ -75,6 +101,7 @@ executable Second
 executable Third
   main-is: Third.hs
   other-modules:
+      Fifth
       First
       Fourth
       Second
@@ -87,6 +114,7 @@ executable Third
     , base >=4.7 && <5
     , bytestring
     , directory >=1.3.6.0
+    , iconv
     , pcre-heavy >=1.0.0.2
     , text >=1.2.4.1
   default-language: Haskell2010
@@ -104,6 +132,7 @@ test-suite Lessons-test
     , base >=4.7 && <5
     , bytestring
     , directory >=1.3.6.0
+    , iconv
     , pcre-heavy >=1.0.0.2
     , text >=1.2.4.1
   default-language: Haskell2010

@@ -19,7 +19,7 @@ import           Control.Monad              ( unless
 main :: IO ()
 main = do
     inputHandler  <- HTML.getHandler
-    outputHandler <- openFile "thinned.html" WriteMode
+    outputHandler <- openFile "resources/thinned.html" WriteMode
     let
         lineSkip skipNext = do
             inputEnded <- hIsEOF inputHandler

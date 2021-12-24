@@ -29,7 +29,7 @@ linkRE = [re|href="(.*?)"|]
 main :: IO ()
 main = do
     inputHandler  <- HTML.getHandler
-    outputHandler <- openFile "links.txt" WriteMode
+    outputHandler <- openFile "resources/links.txt" WriteMode
     content       <- DT.IO.hGetContents inputHandler
     let matches   =  scan linkRE content
     mapM_ (DT.IO.hPutStrLn outputHandler . head . snd) matches
