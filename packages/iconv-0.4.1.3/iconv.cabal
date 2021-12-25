@@ -23,11 +23,11 @@ library
   build-depends:   base >= 3 && < 5,
                    bytestring == 0.9.* || ==0.10.*
   extensions:      ForeignFunctionInterface
-  include-dirs:    cbits, "C:\\Users\\vashu\\AppData\\Local\\Programs\\stack\\x86_64-windows\\ghc-8.10.7\\mingw\\include"
-  extra-lib-dirs:  "C:\\Users\\vashu\\AppData\\Local\\Programs\\stack\\x86_64-windows\\ghc-8.10.7\\mingw\\lib"
+  include-dirs:    cbits
   includes:        hsiconv.h
   c-sources:       cbits/hsiconv.c
   if os(darwin) || os(freebsd) || os(windows)
+  -- if os(darwin) || os(freebsd) || os(windows)
     -- on many systems the iconv api is part of the standard C library
     -- but on some others we have to link to an external libiconv:
     extra-libraries: libiconv
