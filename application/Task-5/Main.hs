@@ -1,6 +1,6 @@
 {-# LANGUAGE QuasiQuotes, FlexibleContexts #-}
 
-module Fifth
+module Main
     ( main
     ) where
 {-

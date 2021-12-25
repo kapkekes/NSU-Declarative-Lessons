@@ -1,4 +1,4 @@
-module First
+module Main
     ( main
     ) where
 

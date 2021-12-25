@@ -35,17 +35,13 @@ library
     , text >=1.2.4.1
   default-language: Haskell2010
 
-executable Fifth
-  main-is: Fifth.hs
+executable Task-1
+  main-is: Main.hs
   other-modules:
-      First
-      Fourth
-      Second
-      Third
       Paths_Lessons
   hs-source-dirs:
-      application
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is Fifth
+      application/Task-1
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Lessons
     , base >=4.7 && <5
@@ -56,17 +52,13 @@ executable Fifth
     , text >=1.2.4.1
   default-language: Haskell2010
 
-executable First
-  main-is: First.hs
+executable Task-2
+  main-is: Main.hs
   other-modules:
-      Fifth
-      Fourth
-      Second
-      Third
       Paths_Lessons
   hs-source-dirs:
-      application
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is First
+      application/Task-2
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Lessons
     , base >=4.7 && <5
@@ -77,17 +69,13 @@ executable First
     , text >=1.2.4.1
   default-language: Haskell2010
 
-executable Fourth
-  main-is: Fourth.hs
+executable Task-3
+  main-is: Main.hs
   other-modules:
-      Fifth
-      First
-      Second
-      Third
       Paths_Lessons
   hs-source-dirs:
-      application
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is Fourth
+      application/Task-3
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Lessons
     , base >=4.7 && <5
@@ -98,17 +86,13 @@ executable Fourth
     , text >=1.2.4.1
   default-language: Haskell2010
 
-executable Second
-  main-is: Second.hs
+executable Task-4
+  main-is: Main.hs
   other-modules:
-      Fifth
-      First
-      Fourth
-      Third
       Paths_Lessons
   hs-source-dirs:
-      application
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is Second
+      application/Task-4
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Lessons
     , base >=4.7 && <5
@@ -119,17 +103,13 @@ executable Second
     , text >=1.2.4.1
   default-language: Haskell2010
 
-executable Third
-  main-is: Third.hs
+executable Task-5
+  main-is: Main.hs
   other-modules:
-      Fifth
-      First
-      Fourth
-      Second
       Paths_Lessons
   hs-source-dirs:
-      application
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is Third
+      application/Task-5
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       Lessons
     , base >=4.7 && <5
