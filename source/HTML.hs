@@ -36,8 +36,8 @@ checkPath probableFile =
         html = DT.takeEnd 5 probableFile == cHTML
         xhtml = DT.takeEnd 6 probableFile == cXHTML
     in do
-        existance <- SD.doesFileExist (DT.unpack probableFile)
-        return $ existance && (html || xhtml)
+        existence <- SD.doesFileExist (DT.unpack probableFile)
+        return $ existence && (html || xhtml)
 
 getHandler :: IO Handle
 getHandler = do
