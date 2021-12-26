@@ -9,9 +9,6 @@ import qualified Data.Text      as DT       ( count
                                             , pack
                                             )
 import qualified Data.Text.IO   as DT.IO    ( hGetContents
-                                            , putStrLn
-                                            )
-import           Control.Monad              ( unless
                                             )
 
 main :: IO ()

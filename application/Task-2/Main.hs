@@ -8,7 +8,6 @@ import qualified HTML                       ( getHandler
 import           System.IO                  ( IOMode (WriteMode)
                                             , hIsEOF
                                             , openFile
-                                            , stdout
                                             )
 import qualified Data.Text.IO   as DT.IO    ( hPutStrLn
                                             , hGetLine

@@ -8,15 +8,10 @@ import qualified HTML                               ( getHandler
                                                     , wait
                                                     )
 import           System.IO                          ( IOMode (WriteMode)
-                                                    , hIsEOF
                                                     , openFile
-                                                    , stdout
                                                     )
 import qualified Data.Text.IO           as DT.IO    ( hPutStrLn
-                                                    , hGetLine
                                                     , hGetContents
-                                                    )
-import           Control.Monad                      ( unless
                                                     )
 import           Text.Regex.PCRE.Heavy              ( Regex
                                                     , re
