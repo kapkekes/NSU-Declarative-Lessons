@@ -27,5 +27,5 @@ main = do
                 line <- DT.IO.hGetLine inputHandler
                 unless skipNext $ DT.IO.hPutStrLn outputHandler line
                 lineSkip (not skipNext)
-    lineSkip True
+    lineSkip False
     HTML.wait
