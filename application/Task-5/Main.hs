@@ -2,18 +2,16 @@ module Main
     ( main
     ) where
 
--- Default imports
+-- Imports from standard libraries
 import Data.ByteString.Lazy as DB.L        (hGetContents, writeFile)
 import Data.Text                           (pack)
 import Data.Text.IO                        (putStr)
 import System.Directory                    (doesFileExist)
 import System.IO                           (IOMode (ReadMode), openBinaryFile)
 import Prelude                      hiding (putStr)
-
--- User-created imports
+-- Imports from user libraries
 import Codec.Text.IConv                    (convert)
-
--- My imports
+-- Imports from my library
 import HTML                                (wait)
 
 
@@ -30,9 +28,9 @@ main = do
         content <- hGetContents handle
         let
             convertTo encoding = convert "UTF-8" encoding content
-            cp866   = convertTo "CP866"
-            cp1251  = convertTo "CP1251"
-            koi8r   = convertTo "KOI8-R"
+            cp866  = convertTo "CP866"
+            cp1251 = convertTo "CP1251"
+            koi8r  = convertTo "KOI8-R"
         DB.L.writeFile "resources/headings-CP866.txt" cp866
         DB.L.writeFile "resources/headings-CP1251.txt" cp1251
         DB.L.writeFile "resources/headings-KOI8-R.txt" koi8r

@@ -2,22 +2,16 @@ module Main
     ( main
     ) where
 
-import qualified HTML                       ( getHandler
-                                            , wait
-                                            )
-import           System.IO                  ( IOMode (WriteMode)
-                                            , hIsEOF
-                                            , openFile
-                                            )
-import qualified Data.Text.IO   as DT.IO    ( hPutStrLn
-                                            , hGetLine
-                                            )
-import           Control.Monad              ( unless
-                                            )
+-- Imports from standard libraries
+import           Control.Monad          (unless)
+import qualified Data.Text.IO  as DT.IO (hPutStrLn, hGetLine)
+import           System.IO              (IOMode (WriteMode), hIsEOF, openFile)
+-- Imports from my library
+import           HTML                   (getHandler, wait)
 
 main :: IO ()
 main = do
-    inputHandler  <- HTML.getHandler
+    inputHandler  <- getHandler
     outputHandler <- openFile "resources/thinned.html" WriteMode
     let
         lineSkip skipNext = do
@@ -27,4 +21,4 @@ main = do
                 unless skipNext $ DT.IO.hPutStrLn outputHandler line
                 lineSkip (not skipNext)
     lineSkip False
-    HTML.wait
+    wait
