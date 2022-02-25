@@ -1,19 +1,20 @@
-# Serialization to text files
+# "Maybe" Monad
 
-Package can be built using both **Stack** and **Cabal** (thanks to Meli Pona for testing with) on **Windows 11**.
+Package can be built using both **Stack** and **Cabal** on **Windows 11**.
+
+Contains initial `Barans.hs` (aka `Sheeps.hs`) and my `Sheeps.Functions` module.
 
 ## How to build and run:
 1. Download and unpack one of release archives.
 2. Open Command Prompt or PowerShell (via <kbd>Win</kbd> + <kbd>R</kbd>, write `wt`, <kbd>Enter</kbd>).
 3. Go to unpacked archive (`cd` for Command Prompt, `Set-Location` for PowerShell).
-4. Run project:
+4. Build the project:
     1. For Stack:
     ```
-    stack run
+    stack build
     ```
-    2. For Cabal:
+    1. For Cabal:
     ```
-    cabal run
+    cabal build
     ```
-5. Check magically appeared `output` folder.
-6. That's all!
+5. That's all!
