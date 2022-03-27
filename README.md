@@ -1,8 +1,12 @@
-# "Maybe" Monad
+# Monad applications for trees
 
 Package can be built using both **Stack** and **Cabal** on **Windows 11**.
 
-Contains initial `Barans.hs` (aka `Sheeps.hs`) and my `Sheeps.Functions` module.
+Contains the following modules:
+- `Data.Forest`, which describes basic structure of trees and provides some instances for them
+- `Data.Forest.Simple`, which contains trees with values, uses the **Maybe** monad.
+- `Data.Forest.WithID`, which contains trees with ID in nodes, uses the **Either**, **Writer** and **State** monads.
+- `Data.Functor.Arithmetic`, which is just a bunch of shortcuts. (laziness, laziness...)
 
 ## How to build and run:
 1. Download and unpack one of release archives.
@@ -18,3 +22,4 @@ Contains initial `Barans.hs` (aka `Sheeps.hs`) and my `Sheeps.Functions` module.
     cabal build
     ```
 5. That's all!
+6. P.S. if you use Stack, you can execute `stack ghci` and test all functionality of package.
