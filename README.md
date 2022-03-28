@@ -1,4 +1,4 @@
-# Breadth First Search algorith
+# Breadth First Search algorithm
 
 Package can be built using both **Stack** and **Cabal** on **Windows 11**.
 
