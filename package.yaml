@@ -17,6 +17,10 @@ description:         Please see the README on GitHub at <https://github.com/kapk
 dependencies:
 - base        >= 4.7      && < 5
 - mtl         >= 2.0.0
+- array       >= 0.5.0.0
+- containers  >= 0.6.0.0
+- lens        >= 5.0
+- dequeue
 
 library:
   source-dirs:           source

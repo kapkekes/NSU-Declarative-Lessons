@@ -1,12 +1,8 @@
-# Monad applications for trees
+# Breadth First Search algorith
 
 Package can be built using both **Stack** and **Cabal** on **Windows 11**.
 
-Contains the following modules:
-- `Data.Forest`, which describes basic structure of trees and provides some instances for them
-- `Data.Forest.Simple`, which contains trees with values, uses the **Maybe** monad.
-- `Data.Forest.WithID`, which contains trees with ID in nodes, uses the **Either**, **Writer** and **State** monads.
-- `Data.Functor.Arithmetic`, which is just a bunch of shortcuts. (laziness, laziness...)
+Contains only one module - `Data.Graph.Search`, which implements BFS and some useful functions.
 
 ## How to build and run:
 1. Download and unpack one of release archives.
