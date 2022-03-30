@@ -4,7 +4,7 @@ module Data.Graph.Search
     -- Graph from the picture
     ( exampleGraph
 
-    --Algorith itself
+    --Algorithm itself
     , breadthFirst
 
     -- Converter to Tree
@@ -58,29 +58,29 @@ colorChanger ((u, v): e) t = do
         )
     colorChanger e t
 
-computationThing :: [Edge] -> [Vertex] -> GraphState (Array Vertex (Maybe Distance), Array Vertex (Maybe Vertex))
+computationThing :: [Edge] -> [Vertex] -> GraphState (Array Vertex (Maybe Vertex))
 computationThing e v = do
     now <- get
     if Q.null $ now ^. queue
-    then return (now ^. distances, now ^. predecessors)
+    then return (now ^. predecessors)
     else do
         let (n, qn) = fromJust . popFront $ now ^. queue
         modify (& queue .~ qn)
         colorChanger e n
         computationThing e v
 
-breadthFirst :: Graph -> Vertex -> (Array Vertex (Maybe Distance), Array Vertex (Maybe Vertex))
+breadthFirst :: Graph -> Vertex -> Array Vertex (Maybe Vertex)
 breadthFirst graph initial = evalState (computationThing e v) g
     where
-        v = vertices graph                                       :: [Vertex]                    -- all vertices
-        e = edges graph                                          :: [Edge]                      -- all edges
-        b = (head v, last v)                                     :: Bounds
-        l = listArray b . repeat
+        v = vertices graph                                      :: [Vertex]                    -- all vertices
+        e = edges graph                                         :: [Edge]                      -- all edges
+        b = (head v, last v)                                    :: Bounds
+        l = listArray b . repeat                                :: e -> Array Vertex e
         g = GraphStateVars
-            { _colors = l White // [(initial, Grey)]            :: Array Vertex Color          -- colors
-            , _distances = l Nothing // [(initial, Just 0)]     :: Array Vertex (Maybe Int)    -- distances
+            { _colors       = l White // [(initial, Grey)]      :: Array Vertex Color          -- colors
+            , _distances    = l Nothing // [(initial, Just 0)]  :: Array Vertex (Maybe Int)    -- distances
             , _predecessors = l Nothing // [(initial, Nothing)] :: Array Vertex (Maybe Vertex) -- predecessors
-            , _queue = fromList [initial]                       :: BankersDequeue Vertex       -- queue
+            , _queue        = fromList [initial]                :: BankersDequeue Vertex       -- queue
             }
 
 buildSearchTree :: Vertex -> Array Vertex (Maybe Vertex) -> T.Tree Vertex
@@ -90,7 +90,7 @@ buildSearchTree t p = T.unfoldTree getNode t
         getNode x = (x, [b | (a, b) <- allEdges, a == x])
 
 applyBFS :: Graph -> Vertex -> T.Tree Vertex
-applyBFS g v = buildSearchTree v . snd $ breadthFirst g v
+applyBFS g v = buildSearchTree v $ breadthFirst g v
 
 drawTree :: T.Tree String -> String
 drawTree = T.drawTree
